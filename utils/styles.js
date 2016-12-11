@@ -2,7 +2,8 @@ import { css } from 'glamor'
 
 export const createCSS = styles => {
   return Object.keys(styles).reduce((result, name) => {
-    return { ...result, [name]: css(styles[name]) }
+    let rules = [].concat(styles[name])
+    return { ...result, [name]: css.apply(null, rules) }
   }, {})
 }
 
