@@ -8,14 +8,16 @@ require('babel-register')({
   ]
 })
 
-var path = require('path')
-var Head = require('next/dist/lib/head').default
-var Document = require('./Document').default
-var { renderStatic } = require('glamor/server')
-var { createElement } = require('react')
-var { renderToStaticMarkup } = require('react-dom/server')
-var file = path.join(process.cwd(), process.argv[2])
-var Component = require(file)
+const SITE_ID = process.env.SITE_ID
+const path = require('path')
+const Head = require('next/dist/lib/head').default
+const Document = require('./Document').default
+const analytics = require('./analytics').default
+const { renderStatic } = require('glamor/server')
+const { createElement } = require('react')
+const { renderToStaticMarkup } = require('react-dom/server')
+const file = path.join(process.cwd(), process.argv[2])
+let Component = require(file)
 
 if (!Component) {
   console.error('No component found at', file)
@@ -28,8 +30,9 @@ if (Component.default) {
 
 const { html, css } = renderStatic(() => renderToStaticMarkup(createElement(Component)))
 const head = Head.rewind()
-const doc = createElement(Document, { html, head, css })
+const doc = renderToStaticMarkup(createElement(Document, { html, head, css }))
+  .replace('__analytics__', analytics(SITE_ID))
 
-const markup = '<!DOCTYPE html>' + renderToStaticMarkup(doc)
+const markup = '<!DOCTYPE html>' + doc
 
 process.stdout.write(markup)

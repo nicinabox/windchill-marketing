@@ -8,6 +8,8 @@ export default ({ head, css, html }) => {
     </head>
     <body>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+
+      __analytics__
     </body>
   </html>
 }
