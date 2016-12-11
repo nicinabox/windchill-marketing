@@ -4,7 +4,7 @@ import React from 'react'
 import { createElement } from 'glamor/react'
 import { container, columns, row } from 'glamor/ous'
 import { media, merge, css } from 'glamor'
-import Head from 'next/Head'
+import Head from 'next/head'
 import { createCSS, createGlobalCSS } from '../utils/styles'
 
 const appStoreUrl = 'https://itunes.apple.com/us/app/windchill-easy-windchill-calculator/id1175553238'
