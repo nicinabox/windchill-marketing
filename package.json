@@ -8,7 +8,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "static": "node render-static.js pages > index.html"
+    "export": "node export/static.js pages/index.js > index.html",
+    "deploy": "surge"
   },
   "keywords": [],
   "author": "Nic Haynes <nic@nicinabox.com> (http://nicinabox.com)",
