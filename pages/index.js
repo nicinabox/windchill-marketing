@@ -76,11 +76,6 @@ export default () => {
             font-size: 7px
           }
         }
-        /*@media (max-width: 722px) {
-          html {
-            font-size: 6px
-          }
-        }*/
         @media (max-width: 549px) {
           html {
             font-size: 7px
