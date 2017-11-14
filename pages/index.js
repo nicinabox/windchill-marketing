@@ -1,10 +1,13 @@
 import React from 'react'
 import Head from 'next/head'
 import Icon from '../components/Icon'
+import Script from '../components/Script'
 import Device from '../components/Device'
 import Features from '../components/Features'
 import Download from '../components/Download'
 import Footer from '../components/Footer'
+
+const SITE_ID = process.env.SITE_ID
 
 export default () => {
   return (
@@ -38,6 +41,20 @@ export default () => {
 
       <div className="gradient" />
       <div className="triangle" />
+
+      <Script>{`
+        var _gauges = _gauges || [];
+        (function() {
+          var t   = document.createElement('script')
+          t.type  = 'text/javascript'
+          t.async = true
+          t.id    = 'gauges-tracker'
+          t.setAttribute('data-site-id', '${SITE_ID}')
+          t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif')
+          t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js'
+          var s = document.getElementsByTagName('script')[0]
+          s.parentNode.insertBefore(t, s)
+      `}</Script>
 
       <style jsx global>{`
         * {
