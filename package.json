@@ -8,8 +8,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "node export/static.js pages/index.js > index.html",
-    "deploy": "surge"
+    "export": "next export",
+    "deploy": "surge -p out -d windchill.nicinabox.com"
   },
   "keywords": [],
   "author": "Nic Haynes <nic@nicinabox.com> (http://nicinabox.com)",
