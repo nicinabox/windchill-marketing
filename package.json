@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "surge -p out -d windchill.nicinabox.com"
+    "deploy": "surge -p out -d windchillapp.com"
   },
   "keywords": [],
   "author": "Nic Haynes <nic@nicinabox.com> (http://nicinabox.com)",
