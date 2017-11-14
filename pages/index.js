@@ -45,15 +45,16 @@ export default () => {
       <Script>{`
         var _gauges = _gauges || [];
         (function() {
-          var t   = document.createElement('script')
-          t.type  = 'text/javascript'
-          t.async = true
-          t.id    = 'gauges-tracker'
-          t.setAttribute('data-site-id', '${SITE_ID}')
-          t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif')
-          t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js'
-          var s = document.getElementsByTagName('script')[0]
-          s.parentNode.insertBefore(t, s)
+          var t   = document.createElement('script');
+          t.type  = 'text/javascript';
+          t.async = true;
+          t.id    = 'gauges-tracker';
+          t.setAttribute('data-site-id', '584d91a4bb922a42ac01e371');
+          t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+          t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(t, s);
+        })();
       `}</Script>
 
       <style jsx global>{`
